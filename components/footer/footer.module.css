@@ -1,7 +1,7 @@
 .footer_container {
   background: #242424;
   color: #fff;
-  margin-top: 12rem;
+  margin-top: 35rem;
 }
 
 .footer {
@@ -11,10 +11,16 @@
 
   font-weight: 700;
   padding: 0;
-  padding: 1.2rem 0;
+  padding: 2.4rem;
 }
 
 .footer p {
   margin-bottom: 0;
   font-size: 1.4rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .footer {
+    padding: 2.4rem 0;
+  }
 }
