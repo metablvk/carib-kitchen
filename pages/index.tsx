@@ -21,50 +21,6 @@ export default function Home() {
             <p>Delicious caribbean food just an order away</p>
           </section>
           <Menu />
-          <section className={styles.reviews}>
-            <h2>Reviews</h2>
-            <div className={styles.cards}>
-              <div className={styles.card}>
-                <h3>Shannon</h3>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim
-                  sunt laudantium deserunt atque nulla dignissimos sint dicta
-                  non reiciendis doloribus.
-                </p>
-              </div>
-              <div className={styles.card}>
-                <h3>Sasha</h3>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim
-                  sunt laudantium deserunt atque nulla dignissimos sint dicta
-                  non reiciendis doloribus.
-                </p>
-              </div>
-              <div className={styles.card}>
-                <h3>Leroy</h3>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim
-                  sunt laudantium deserunt atque nulla dignissimos sint dicta
-                  non reiciendis doloribus.
-                </p>
-              </div>
-            </div>
-          </section>
-          {/* <section className={styles.contact}>
-            <section>
-              <h2>Contact</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sapiente pariatur esse fuga ipsum consequuntur voluptas sed,
-                dolor alias obcaecati ipsam.
-              </p>
-            </section>
-            <section>
-              <h3>Address</h3>
-              <p>123 street 123 ave Edmonton, Alberta</p>
-              <p>Phone: 123-456-7891</p>
-            </section>
-          </section> */}
         </section>
       </Layout>
     </>
