@@ -51,6 +51,9 @@ a {
   border: none;
 }
 
+.lobster {
+  font-family: 'Lobster', cursive;
+}
 @media screen and (min-width: 1200px) {
   .container {
     padding: 2.4rem 0;

@@ -11,8 +11,8 @@ const Navbar = () => {
   return (
     <div>
       <nav className={`${styles.navbar} container`}>
-        <div className={styles.logo}>
-          <Link href='/' className={styles.logo}>
+        <div>
+          <Link href='/' className={`${styles.logo} lobster`}>
             Jamrock Kitchen
           </Link>
         </div>

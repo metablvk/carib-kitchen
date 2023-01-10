@@ -1,7 +1,20 @@
+.footer_container {
+  background: #242424;
+  color: #fff;
+  margin-top: 12rem;
+}
+
 .footer {
   display: flex;
   justify-content: flex-end;
-  font-size: 1.2rem;
+  align-items: center;
+
   font-weight: 700;
-  margin-top: 24rem;
+  padding: 0;
+  padding: 1.2rem;
+}
+
+.footer p {
+  margin-bottom: 0;
+  font-size: 1.4rem;
 }

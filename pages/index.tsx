@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { useState, MouseEvent, useEffect } from 'react';
+import Image from 'next/image';
 import Layout from '../components/layout/layout.component';
-import MenuItem from '../components/menu-item/menu-item.component';
+
 import styles from './../styles/home.module.css';
 import Menu from '../components/menu/menu.component';
 
@@ -50,7 +50,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className={styles.contact}>
+          {/* <section className={styles.contact}>
             <section>
               <h2>Contact</h2>
               <p>
@@ -64,7 +64,7 @@ export default function Home() {
               <p>123 street 123 ave Edmonton, Alberta</p>
               <p>Phone: 123-456-7891</p>
             </section>
-          </section>
+          </section> */}
         </section>
       </Layout>
     </>
