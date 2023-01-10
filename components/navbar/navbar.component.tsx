@@ -12,7 +12,7 @@ const Navbar = () => {
     <div>
       <nav className={`${styles.navbar} container`}>
         <div>
-          <Link href='/' className={`${styles.logo} lobster`}>
+          <Link href='/' className={`${styles.logo}`}>
             Jamrock Kitchen
           </Link>
         </div>
