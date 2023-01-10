@@ -32,22 +32,38 @@ const Menu = () => {
         <h2>Menu</h2>
         <ul className={styles.menu_links}>
           <li>
-            <button onClick={handleClick} value='all'>
+            <button
+              onClick={handleClick}
+              className={filter === 'all' ? `${styles.active}` : ''}
+              value='all'
+            >
               All
             </button>
           </li>
           <li>
-            <button onClick={handleClick} value='breakfast'>
+            <button
+              onClick={handleClick}
+              className={filter === 'breakfast' ? `${styles.active}` : ''}
+              value='breakfast'
+            >
               Breakfast
             </button>
           </li>
           <li>
-            <button onClick={handleClick} value='dinner'>
+            <button
+              onClick={handleClick}
+              className={filter === 'dinner' ? `${styles.active}` : ''}
+              value='dinner'
+            >
               Dinner
             </button>
           </li>
           <li>
-            <button onClick={handleClick} value='treats'>
+            <button
+              onClick={handleClick}
+              className={filter === 'treats' ? `${styles.active}` : ''}
+              value='treats'
+            >
               Treats
             </button>
           </li>

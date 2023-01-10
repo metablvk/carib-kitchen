@@ -19,6 +19,10 @@
   cursor: pointer;
 }
 
+.menu_links li .active {
+  border-bottom: 0.2rem solid rgba(128, 128, 128);
+}
+
 .menu_items {
   margin-top: 2.4rem;
   display: grid;
