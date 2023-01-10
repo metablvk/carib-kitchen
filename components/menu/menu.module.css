@@ -1,0 +1,45 @@
+.menu {
+  margin-top: 9.6rem;
+}
+
+.menu_links {
+  margin-top: 2.4rem;
+  display: flex;
+}
+
+.menu_links li {
+  margin-right: 0.8rem;
+  cursor: pointer;
+}
+
+.menu_links li button {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.menu_items {
+  margin-top: 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2.4rem;
+}
+
+@media screen and (min-width: 600px) {
+  .menu_items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .menu_items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .menu_items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

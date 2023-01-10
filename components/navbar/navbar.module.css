@@ -1,0 +1,36 @@
+.logo {
+  font-family: 'Lobster', cursive;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 3rem;
+}
+
+.cart {
+  font-size: 2rem;
+  position: relative;
+  background: #242424;
+  padding: 0.8rem;
+  border-radius: 2.4rem;
+}
+
+.cart a {
+  color: #fff;
+}
+
+.cart_count {
+  font-size: 1.5rem;
+  position: absolute;
+  top: -0.5rem;
+  left: 2.4rem;
+  background: green;
+  border-radius: 0.2rem;
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+}
