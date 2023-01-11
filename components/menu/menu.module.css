@@ -2,6 +2,10 @@
   margin-top: 9.6rem;
 }
 
+.menu h2 {
+  font-weight: 700;
+}
+
 .menu_links {
   margin-top: 2.4rem;
   display: flex;

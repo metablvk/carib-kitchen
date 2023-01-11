@@ -23,13 +23,37 @@ const Cart = () => {
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <link rel='icon' href='/favicon.ico' />
         </Head>
-        <section className='container'>
-          <h1>Cart</h1>
-          <p>Cart Total: ${cartTotal.toFixed(2)}</p>
-          <section className={styles.cart}>
+        <section className={`container ${styles.cart}`}>
+          {/* <h1>Cart</h1>
+          <p>Cart Total: ${cartTotal.toFixed(2)}</p> */}
+          <section>
             {cartItems.map((cartItem: any, id: number) => {
               return <CartItem key={id} cartItem={cartItem} id={id} />;
             })}
+          </section>
+          <section className={styles.cart_total}>
+            <div>
+              <h1>Cart</h1>
+              <p>
+                Cart Total:{' '}
+                <span className={styles.cost}>${cartTotal.toFixed(2)}</span>
+              </p>
+              <p>
+                Total GST:{' '}
+                <span className={styles.cost}>
+                  ${(cartTotal * 0.05).toFixed(2)}
+                </span>
+              </p>
+              <p>
+                Final Total:{' '}
+                <span className={styles.cost}>
+                  ${(cartTotal * 0.05 + cartTotal).toFixed(2)}
+                </span>
+              </p>
+            </div>
+            <div>
+              <button>Check Out</button>
+            </div>
           </section>
         </section>
       </Layout>

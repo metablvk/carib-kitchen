@@ -29,26 +29,30 @@ const CartItem: FC<Props> = ({ cartItem, id }) => {
   return (
     <>
       <div className={styles.cart_item} key={id}>
-        <Image
-          src={cartItem.imgUrl}
-          height={200}
-          width={200}
-          alt={cartItem.title}
-        />
         <div className={styles.cart_item_header}>
-          <h2 className={styles.cart_item_title}>{cartItem.title}</h2>
-        </div>
-        <button onClick={clearItemHandler} className={styles.clear_item}>
-          x
-        </button>
-        <div className={styles.cart_item_footer}>
-          <div className={styles.buttons}>
-            <button onClick={removeItemHandler}>-</button>
-            <button onClick={addItemHandler}>+</button>
+          <Image
+            src={cartItem.imgUrl}
+            height={100}
+            width={100}
+            alt={cartItem.title}
+          />
+          <div>
+            <h2 className={styles.cart_item_title}>{cartItem.title}</h2>
+            <p>{cartItem.price}</p>
           </div>
-          <ul className={styles.flex}>
-            <li>{cartItem.price} </li>
+          <button onClick={clearItemHandler} className={styles.clear_item}>
+            x
+          </button>
+        </div>
+        <div className={styles.cart_item_footer}>
+          <ul className={styles.cart_item_controls}>
+            <li>
+              <button onClick={removeItemHandler}>-</button>
+            </li>
             <li>{cartItem.quantity}</li>
+            <li>
+              <button onClick={addItemHandler}>+</button>
+            </li>
           </ul>
         </div>
       </div>
