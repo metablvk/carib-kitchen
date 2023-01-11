@@ -2,10 +2,31 @@
   Navbar styles
 */
 
+.navbar_header {
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.navbar_controls {
+  display: flex;
+  align-items: center;
+}
+
+.navbar_controls div {
+  margin-right: 3rem;
+}
+
+.navbar_controls div:last-of-type {
+  margin-right: 0;
 }
 
 .logo {
@@ -13,25 +34,134 @@
   font-size: 3rem;
 }
 
+.hamburger {
+  border: none;
+  display: block;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-bottom: 0.7rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #242424;
+}
+
 .cart {
-  font-size: 2rem;
+  font-size: 2.2rem;
   position: relative;
-  background: #242424;
-  padding: 0.8rem;
+  top: -0.3rem;
   border-radius: 2.4rem;
+  cursor: pointer;
 }
 
 .cart a {
-  color: #fff;
+  color: #242424;
 }
 
 .cart_count {
   font-size: 1.5rem;
   position: absolute;
-  top: -0.5rem;
-  left: 2.4rem;
+  top: -0.8rem;
+  left: 1.2rem;
   background: green;
   border-radius: 0.2rem;
   color: #fff;
-  padding: 0.2rem 0.6rem;
+  padding: 0.1rem 0.4rem;
+}
+
+.side_nav {
+  position: fixed;
+  right: 0;
+  top: 0rem;
+  width: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  height: 100vh;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.close_icon {
+  font-size: 3rem;
+  position: relative;
+  left: 26.3rem;
+  top: 2rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  color: #242424;
+}
+
+.nav_menu {
+  margin-top: 4.8rem;
+  padding: 2rem;
+}
+
+.nav_menu li {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.nav_menu li a {
+  font-size: 1.8rem;
+}
+
+.show_nav {
+  width: 30rem;
+}
+
+.li_cart {
+  display: none;
+}
+
+.nav_menu li:nth-of-type(2) a::before {
+  content: 'Cart';
+}
+
+@media screen and (min-width: 1200px) {
+  .hamburger {
+    display: none;
+  }
+  .navbar_controls {
+    display: none;
+  }
+  .close_icon {
+    display: none;
+  }
+
+  .side_nav {
+    position: static;
+    background-color: none;
+    backdrop-filter: none;
+    height: initial;
+    width: initial;
+    overflow: visible;
+    transition: 0.4s;
+  }
+
+  .nav_menu {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  .nav_menu li {
+    margin: 0;
+    margin-right: 2rem;
+  }
+
+  .nav_menu li:last-of-type {
+    margin-right: 0;
+  }
+
+  .nav_menu li:nth-of-type(2) a::before {
+    content: '';
+  }
+
+  .li_cart {
+    display: initial;
+  }
 }
