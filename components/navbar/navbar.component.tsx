@@ -22,12 +22,6 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={styles.navbar_controls}>
-          <div className={styles.cart}>
-            <Link href='/cart'>
-              <FontAwesomeIcon icon={faCartShopping} />
-            </Link>
-            <div className={styles.cart_count}> {cartCount}</div>
-          </div>
           <div className={styles.hamburger} onClick={handleClick}>
             <span className={styles.bar}></span>
             <span className={styles.bar}></span>
@@ -52,6 +46,9 @@ const Navbar = () => {
             {/* <li>
               <Link href='/login'>Login</Link>
             </li> */}
+            <li>
+              <Link href='/'>Login</Link>
+            </li>
             <li>
               <Link href='/cart'>
                 <div className={`${styles.cart} ${styles.li_cart}`}>

@@ -98,6 +98,7 @@
 .nav_menu {
   margin-top: 4.8rem;
   padding: 2rem;
+  text-align: right;
 }
 
 .nav_menu li {
@@ -107,7 +108,8 @@
 }
 
 .nav_menu li a {
-  font-size: 1.8rem;
+  font-size: 4rem;
+  text-transform: lowercase;
 }
 
 .show_nav {
@@ -118,7 +120,7 @@
   display: none;
 }
 
-.nav_menu li:nth-of-type(2) a::before {
+.nav_menu li:last-of-type a::before {
   content: 'Cart';
 }
 
@@ -157,8 +159,13 @@
     margin-right: 0;
   }
 
-  .nav_menu li:nth-of-type(2) a::before {
+  .nav_menu li:last-of-type a::before {
     content: '';
+  }
+
+  .nav_menu li a {
+    font-size: 1.8rem;
+    text-transform: lowercase;
   }
 
   .li_cart {
