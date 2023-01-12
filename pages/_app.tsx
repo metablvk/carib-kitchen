@@ -31,7 +31,7 @@ function App({ Component, pageProps }: AppProps) {
       }
     };
     getAllUserOrders();
-  }, [currentUser]);
+  }, [currentUser, dispatch]);
   return (
     <>
       <Provider store={store}>

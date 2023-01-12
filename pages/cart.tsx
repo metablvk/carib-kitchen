@@ -21,7 +21,7 @@ const Cart = () => {
     createOrder(
       cartItems,
       currentUser.uid,
-      (cartTotal * 0.05 + cartTotal).toFixed(2)
+      Number((cartTotal * 0.05 + cartTotal).toFixed(2))
     );
 
   return (

@@ -24,9 +24,9 @@ const Orders = () => {
                     </p>
                   </div>
                   <div className='card-body'></div>
-                  {order.items.map((item: any) => {
+                  {order.items.map((item: any, id: number) => {
                     return (
-                      <div>
+                      <div key={id}>
                         <p>{item.title}</p>
                       </div>
                     );
