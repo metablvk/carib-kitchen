@@ -28,9 +28,13 @@ const Register = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (password === confirmPassword) {
-      const user = await createAuthUserWithEmailAndPassword(email, password);
-      if (user) {
-        router.push('orders');
+      try {
+        const user = await createAuthUserWithEmailAndPassword(email, password);
+        if (user) {
+          router.push('orders');
+        }
+      } catch (e) {
+        console.log(e);
       }
     } else {
       console.log('passwords must match!');

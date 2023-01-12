@@ -26,9 +26,13 @@ const Login = () => {
   };
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const user = await signInAuthUserWithEmailAndPassword(email, password);
-    if (user) {
-      router.push('orders');
+    try {
+      const user = await signInAuthUserWithEmailAndPassword(email, password);
+      if (user) {
+        router.push('orders');
+      }
+    } catch (e) {
+      console.log(e);
     }
   };
   return (

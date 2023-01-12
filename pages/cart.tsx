@@ -10,9 +10,19 @@ import {
 
 import CartItem from '../components/cart-item/cart-item.component';
 
+import { selectCurrentUser } from '../store/user/user.selector';
+import { createOrder } from '../utils/firebase';
+
 const Cart = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
+  const currentUser = useSelector(selectCurrentUser);
+  const handleCreateOrder = () =>
+    createOrder(
+      cartItems,
+      currentUser.uid,
+      (cartTotal * 0.05 + cartTotal).toFixed(2)
+    );
 
   return (
     <>
@@ -52,7 +62,7 @@ const Cart = () => {
               </p>
             </div>
             <div>
-              <button>Check Out</button>
+              <button onClick={handleCreateOrder}>Check Out</button>
             </div>
           </section>
         </section>

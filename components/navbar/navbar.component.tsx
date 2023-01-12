@@ -60,6 +60,9 @@ const Navbar = () => {
                     Sign Out
                   </Link>
                 </li>
+                <li>
+                  <Link href='/orders'>Orders</Link>
+                </li>
               </>
             ) : (
               <>

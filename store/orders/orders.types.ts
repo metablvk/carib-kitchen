@@ -1,0 +1,3 @@
+export const ORDERS_ACTION_TYPES = {
+  SET_CURRENT_ORDERS: 'orders/SET_CURRENT_ORDERS',
+};

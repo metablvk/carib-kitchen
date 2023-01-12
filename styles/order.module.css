@@ -1,0 +1,30 @@
+.orders_container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2.4rem;
+}
+
+.card {
+  padding: 2rem;
+}
+
+.card_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card h2 {
+  margin-bottom: 2.4rem;
+}
+
+@media screen and (min-width: 700px) {
+  .orders_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .orders_container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
