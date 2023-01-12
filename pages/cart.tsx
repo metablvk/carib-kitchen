@@ -17,12 +17,17 @@ const Cart = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
   const currentUser = useSelector(selectCurrentUser);
-  const handleCreateOrder = () =>
-    createOrder(
-      cartItems,
-      currentUser.uid,
-      Number((cartTotal * 0.05 + cartTotal).toFixed(2))
-    );
+  const handleCreateOrder = () => {
+    try {
+      createOrder(
+        cartItems,
+        currentUser.uid,
+        Number((cartTotal * 0.05 + cartTotal).toFixed(2))
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <>

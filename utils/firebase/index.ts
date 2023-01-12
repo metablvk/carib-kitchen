@@ -69,7 +69,7 @@ export const createOrder = async (
     finalTotal: total,
     dateOrdered: d.toISOString().slice(0, 10),
   });
-  console.log('Document written with ID: ', docRef.id);
+  return docRef.id;
 };
 
 export const getAllOrders = async (uid: string) => {
