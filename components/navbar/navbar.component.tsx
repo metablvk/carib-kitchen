@@ -21,6 +21,7 @@ const Navbar = () => {
   };
   const handleSignOut = () => {
     signOutUser();
+    setMenuState(!menuState);
   };
   return (
     <header className={styles.navbar_header}>
