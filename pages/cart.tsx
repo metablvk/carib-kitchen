@@ -14,6 +14,7 @@ import { selectCurrentUser } from '../store/user/user.selector';
 import { createOrder, getOrder } from '../utils/firebase';
 import { selectCurrentOrders } from '../store/orders/orders.selector';
 import { setCurrentOrders } from '../store/orders/orders.action';
+import { clearCart, clearItemFromCart } from '../store/cart/cart.action';
 import Link from 'next/link';
 
 const Cart = () => {
@@ -38,6 +39,7 @@ const Cart = () => {
   const handleGetOrder = async (orderId: string) => {
     const order = await getOrder(orderId);
     dispatch(setCurrentOrders([...currentOrders, order]));
+    dispatch(clearCart());
     if (order) {
       router.push('orders');
     }
