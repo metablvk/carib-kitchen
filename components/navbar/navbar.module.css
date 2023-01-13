@@ -193,7 +193,6 @@
   .nav_menu {
     display: flex;
     flex-direction: row-reverse;
-    width: 100%;
   }
 
   .nav_menu li {
