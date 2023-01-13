@@ -1,0 +1,97 @@
+.card {
+  padding: 2rem;
+}
+
+.card_header {
+  color: #242424;
+}
+
+.card_header img {
+  width: 100%;
+  border-radius: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.card_body h1 {
+  font-size: 2rem;
+  margin-bottom: 1.8rem;
+}
+
+.card_body h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.card_body p {
+  font-size: 1.5rem;
+  color: rgb(128, 128, 128);
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+}
+
+.card_body p {
+  max-width: 60rem;
+}
+
+.card_body .popular_container {
+  font-weight: 700;
+}
+
+.card_body .popular {
+  color: rgb(255, 102, 0);
+  margin-left: 0.4rem;
+}
+
+.add_btn {
+  background: #242424;
+  padding: 1.2rem;
+  border: none;
+  color: #fff;
+  margin-top: 1.2rem;
+  border-radius: 0.3rem;
+}
+
+@media screen and (min-width: 800px) {
+  .card {
+    display: flex;
+    margin-top: 4.8rem;
+  }
+  .card .card_header {
+    width: calc(50% - 2.4rem);
+    margin-right: 2.4rem;
+  }
+  .card .card_body h1 {
+    font-size: 2.4rem;
+  }
+  .card .card_body {
+    width: calc(50% - 2.4rem);
+  }
+  .add_btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 4.8rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card {
+    max-width: 120rem;
+    margin: 4.8rem auto;
+    padding: 2.4rem 0;
+  }
+  .card .card_header img {
+    height: 40rem;
+  }
+  .card .card_body h1 {
+    font-size: 3rem;
+  }
+
+  .card .card_body h2 {
+    font-size: 2.4rem;
+  }
+
+  .card .card_body p {
+    font-size: 1.8rem;
+  }
+}

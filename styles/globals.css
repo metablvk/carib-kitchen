@@ -9,8 +9,8 @@ html,
 body {
   font-size: 62.5%;
   font-family: 'Oxygen', sans-serif;
-  color: #fff;
-  background-color: #242424;
+  color: #242424;
+  background-color: #fff;
 }
 
 * {

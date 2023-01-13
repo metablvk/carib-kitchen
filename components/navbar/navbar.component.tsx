@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { selectCartCount } from '../../store/cart/cart.selector';
-import { faX } from '@fortawesome/free-solid-svg-icons';
 
 import { selectCurrentUser } from '../../store/user/user.selector';
 import { signOutUser } from '../../utils/firebase';
@@ -27,7 +26,7 @@ const Navbar = () => {
     <header className={styles.navbar_header}>
       <nav className={`${styles.navbar} container`}>
         <div className={styles.logo}>
-          <Link href=''>Jamrock Kitchen</Link>
+          <Link href='/'>Carib Kitchen</Link>
         </div>
 
         <div
@@ -60,7 +59,6 @@ const Navbar = () => {
             <Link href='/cart'>
               <div className={`${styles.cart} ${styles.li_cart}`}>
                 <FontAwesomeIcon icon={faCartShopping} />
-
                 <div className={styles.cart_count}> {cartCount}</div>
               </div>
             </Link>
