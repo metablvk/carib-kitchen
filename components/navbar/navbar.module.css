@@ -195,6 +195,10 @@
     flex-direction: row-reverse;
   }
 
+  .nav_menu li {
+    width: initial;
+  }
+
   .side_nav li {
     margin-right: 2rem;
   }

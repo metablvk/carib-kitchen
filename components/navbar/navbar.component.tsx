@@ -70,17 +70,29 @@ const Navbar = () => {
             }
           >
             <li>
-              <Link href='/'>Home</Link>
+              <Link href='/'>home</Link>
             </li>
-            <li>
-              <Link href='/about'>About</Link>
-            </li>
-            <li>
-              <Link href='/register'>Register</Link>
-            </li>
-            <li>
-              <Link href='/login'>Login</Link>
-            </li>
+            {currentUser && currentUser ? (
+              <>
+                <li>
+                  <Link href='/' onClick={handleSignOut}>
+                    sign out
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/orders'>Orders</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link href='/register'>register</Link>
+                </li>
+                <li>
+                  <Link href='/login'>login</Link>
+                </li>
+              </>
+            )}
           </div>
         </ul>
       </nav>

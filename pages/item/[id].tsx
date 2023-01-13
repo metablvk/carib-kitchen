@@ -8,11 +8,16 @@ import { Item } from './../../types/menu-item';
 import styles from './../../styles/item.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFireFlameCurved } from '@fortawesome/free-solid-svg-icons';
-
+import { addItemToCart } from '../../store/cart/cart.action';
+import { selectCartItems } from '../../store/cart/cart.selector';
+import { useDispatch, useSelector } from 'react-redux';
 type Props = {
   menuItem: Item;
 };
 const Item: FC<Props> = ({ menuItem }) => {
+  const cartItems = useSelector(selectCartItems);
+  const dispatch = useDispatch();
+  const handleClick = () => dispatch(addItemToCart(cartItems, menuItem));
   return (
     <Layout>
       <div className={styles.card_container}>
@@ -46,7 +51,9 @@ const Item: FC<Props> = ({ menuItem }) => {
               <h2>Information</h2>
               <p>{menuItem.desc}</p>
             </section>
-            <button className={styles.add_btn}>Add To Cart</button>
+            <button className={styles.add_btn} onClick={handleClick}>
+              Add To Cart
+            </button>
           </div>
         </div>
       </div>
