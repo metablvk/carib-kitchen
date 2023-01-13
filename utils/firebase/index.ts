@@ -14,6 +14,8 @@ import {
   query,
   where,
   getDocs,
+  getDoc,
+  doc,
 } from 'firebase/firestore';
 import { totalmem } from 'os';
 import { CartItem } from '../../store/cart/cart.types';
@@ -70,6 +72,12 @@ export const createOrder = async (
     dateOrdered: d.toISOString().slice(0, 10),
   });
   return docRef.id;
+};
+
+export const getOrder = async (orderId: string) => {
+  const docRef = doc(db, 'order', orderId);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
 };
 
 export const getAllOrders = async (uid: string) => {

@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import styles from './../styles/cart.module.css';
 import Layout from '../components/layout/layout.component';
-import { useSelector } from 'react-redux';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
 import {
   selectCartItems,
   selectCartTotal,
@@ -11,24 +11,39 @@ import {
 import CartItem from '../components/cart-item/cart-item.component';
 
 import { selectCurrentUser } from '../store/user/user.selector';
-import { createOrder } from '../utils/firebase';
+import { createOrder, getOrder } from '../utils/firebase';
+import { selectCurrentOrders } from '../store/orders/orders.selector';
+import { setCurrentOrders } from '../store/orders/orders.action';
+import { clearCart, clearItemFromCart } from '../store/cart/cart.action';
+import Link from 'next/link';
 
 const Cart = () => {
+  const dispatch = useDispatch();
+  const currentOrders = useSelector(selectCurrentOrders);
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
   const currentUser = useSelector(selectCurrentUser);
-  const handleCreateOrder = () => {
+  const router = useRouter();
+  const handleCreateOrder = async () => {
     try {
-      createOrder(
+      const orderId = await createOrder(
         cartItems,
         currentUser.uid,
         Number((cartTotal * 0.05 + cartTotal).toFixed(2))
       );
+      await handleGetOrder(orderId);
     } catch (e) {
       console.log(e);
     }
   };
-
+  const handleGetOrder = async (orderId: string) => {
+    const order = await getOrder(orderId);
+    dispatch(setCurrentOrders([...currentOrders, order]));
+    dispatch(clearCart());
+    if (order) {
+      router.push('orders');
+    }
+  };
   return (
     <>
       <Layout>
@@ -67,7 +82,15 @@ const Cart = () => {
               </p>
             </div>
             <div>
-              <button onClick={handleCreateOrder}>Check Out</button>
+              {currentUser ? (
+                <button onClick={handleCreateOrder}>Check Out</button>
+              ) : (
+                <p>
+                  <Link href='/login'>
+                    <button>Login To Checkout</button>
+                  </Link>
+                </p>
+              )}
             </div>
           </section>
         </section>
