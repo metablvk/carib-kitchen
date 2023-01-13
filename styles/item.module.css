@@ -83,6 +83,9 @@
   .card .card_header img {
     height: 40rem;
   }
+  .card_body {
+    margin-top: 4.8rem;
+  }
   .card .card_body h1 {
     font-size: 3rem;
   }
