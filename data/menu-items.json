@@ -1,0 +1,66 @@
+ [
+  {
+    "id": 1,
+    "imgUrl": "'/images/spice-bun.png'",
+    "title": "Guiness Spice Buns",
+    "price": 4.99,
+    "type": "treats",
+    "quantity": 0
+  },
+  {
+    "id": 2,
+    "imgUrl": "/images/snapper.png",
+    "title": "Escovitch Fried Red Snapper",
+    "price": 24.99,
+    "type": "dinner",
+    "quantity": 0,
+  },
+  {
+    "id": 3,
+    "imgUrl": "/images/ox-tail.png",
+    "title": "Guinness-Braised Oxtail ",
+    "price": 24.99,
+    "type": "dinner",
+    "quantity": 0
+  },
+  {
+    "id": 4,
+    "imgUrl": "/images/ackee.png",
+    "title": "Banana, Ackee & Saltfish",
+    "price": 24.99,
+    "type": "dinner",
+    "quantity": 0
+  },
+  {
+    "id": 5,
+    "imgUrl": "/images/jerk-tofu.png",
+    "title": "Jerk Tofu Rasta Pasta",
+    "price": 24.99,
+    "type": "dinner",
+    "quantity": 0
+  },
+  {
+    "id": 6,
+    "imgUrl": "/images/rum-cupcakes.png",
+    "title": "Foolproof Cruzan Rum Cake",
+    "price": 4.99,
+    "type": "treats",
+    "quantity": 0
+  },
+  {
+    "id": 7,
+    "imgUrl": "/images/plantain-porridge.png",
+    "title": "Sweet Plantain Porridge",
+    "price": 4.99,
+    "type": "breakfast",
+    "quantity": 0
+  },
+  {
+    "id": 8,
+    "imgUrl": "/images/stewed-lobster.png",
+    "title": "Stewed Lobster/Shrimp",
+    "price": 24.99,
+    "type": "dinner",
+    "quantity": 0
+  }
+]

@@ -1,6 +1,6 @@
 import { useEffect, useState, MouseEvent } from 'react';
 import styles from './menu.module.css';
-import { menuItems } from './menu-items';
+import { menuItems } from '../../data/menu-items';
 import MenuItem from '../menu-item/menu-item.component';
 
 const Menu = () => {

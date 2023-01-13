@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { selectCartCount } from '../../store/cart/cart.selector';
-import { faX } from '@fortawesome/free-solid-svg-icons';
 
 import { selectCurrentUser } from '../../store/user/user.selector';
 import { signOutUser } from '../../utils/firebase';
@@ -26,65 +25,65 @@ const Navbar = () => {
   return (
     <header className={styles.navbar_header}>
       <nav className={`${styles.navbar} container`}>
-        <div>
-          <Link href='/' className={`${styles.logo}`}>
-            Jamrock Kitchen
-          </Link>
-        </div>
-        <div className={styles.navbar_controls}>
-          <div className={styles.hamburger} onClick={handleClick}>
-            <span className={styles.bar}></span>
-            <span className={styles.bar}></span>
-            <span className={styles.bar}></span>
-          </div>
+        <div className={styles.logo}>
+          <Link href='/'>Carib Kitchen</Link>
         </div>
 
         <div
           className={
             menuState
-              ? `${styles.side_nav} ${styles.show_nav}`
-              : `${styles.side_nav}`
+              ? `${styles.hamburger} ${styles.hamburger_active}`
+              : `${styles.hamburger}`
           }
+          onClick={handleClick}
         >
-          <div className={styles.close_icon} onClick={handleClick}>
-            <FontAwesomeIcon icon={faX} />
+          <div>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
           </div>
-          <ul className={styles.nav_menu}>
+          <div>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+          </div>
+          <div>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+          </div>
+        </div>
+
+        <ul className={styles.nav_menu}>
+          <li>
+            <Link href='/cart'>
+              <div className={`${styles.cart} ${styles.li_cart}`}>
+                <FontAwesomeIcon icon={faCartShopping} />
+                <div className={styles.cart_count}> {cartCount}</div>
+              </div>
+            </Link>
+          </li>
+          <div
+            className={
+              menuState
+                ? `${styles.side_nav} ${styles.show_nav}`
+                : `${styles.side_nav}`
+            }
+          >
             <li>
               <Link href='/'>Home</Link>
             </li>
-            {currentUser ? (
-              <>
-                <li>
-                  <Link href='/' onClick={handleSignOut}>
-                    Sign Out
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/orders'>Orders</Link>
-                </li>
-              </>
-            ) : (
-              <>
-                <li>
-                  <Link href='/register'>Register</Link>
-                </li>
-                <li>
-                  <Link href='/login'>Login</Link>
-                </li>
-              </>
-            )}
             <li>
-              <Link href='/cart'>
-                <div className={`${styles.cart} ${styles.li_cart}`}>
-                  <FontAwesomeIcon icon={faCartShopping} />
-
-                  <div className={styles.cart_count}> {cartCount}</div>
-                </div>
-              </Link>
+              <Link href='/about'>About</Link>
             </li>
-          </ul>
-        </div>
+            <li>
+              <Link href='/register'>Register</Link>
+            </li>
+            <li>
+              <Link href='/login'>Login</Link>
+            </li>
+          </div>
+        </ul>
       </nav>
     </header>
   );

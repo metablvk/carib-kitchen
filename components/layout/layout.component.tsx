@@ -10,7 +10,7 @@ const Layout: FC<Props> = ({ children }) => (
   <div className={`${styles.site}`}>
     <Navbar />
     <main className={styles.site_content}>{children}</main>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 );
 

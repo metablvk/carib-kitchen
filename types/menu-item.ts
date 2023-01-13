@@ -5,4 +5,7 @@ export type Item = {
   price: number;
   type: string;
   quantity: number;
+  popular: boolean;
+  desc: string;
+  ingredients: string[];
 };
