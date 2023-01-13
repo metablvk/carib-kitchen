@@ -25,10 +25,6 @@ const Navbar = () => {
   return (
     <header className={styles.navbar_header}>
       <nav className={`${styles.navbar} container`}>
-        <div className={styles.logo}>
-          <Link href='/'>Carib Kitchen</Link>
-        </div>
-
         <div
           className={
             menuState
@@ -52,6 +48,9 @@ const Navbar = () => {
             <span className={styles.bar}></span>
             <span className={styles.bar}></span>
           </div>
+        </div>
+        <div className={styles.logo}>
+          <Link href='/'>Carib Kitchen</Link>
         </div>
 
         <ul className={styles.nav_menu}>
