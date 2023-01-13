@@ -14,7 +14,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: cener;
+  align-items: center;
 }
 
 /* 
@@ -71,21 +71,17 @@
   border: none;
   display: block;
   cursor: pointer;
-  position: absolute;
-  top: 80vh;
   z-index: 2;
   background: #242424;
-  padding: 0.9rem 1rem;
-  width: 4.2rem;
-  height: 4rem;
+
+  width: 3rem;
+
   display: flex;
   border-radius: 0.4rem;
   justify-content: space-between;
-  top: 89vh;
-  left: 0;
+
   right: 2.38rem;
   bottom: 0;
-  margin-left: auto;
 }
 
 .hamburger div {
