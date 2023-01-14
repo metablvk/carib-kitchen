@@ -1,30 +1,27 @@
-import { FormEvent, ChangeEvent } from "react";
-import { useState } from "react";
-import styles from "./register.module.css";
-import { createAuthUserWithEmailAndPassword } from "../../utils/firebase";
+import { useState, ChangeEvent, FormEvent } from "react";
+import { signInAuthUserWithEmailAndPassword } from "../../utils/firebase";
+import styles from "./login.module.css";
 import { useRouter } from "next/router";
 
 type FormFields = {
   email: string;
   password: string;
-  confirmPassword: string;
 };
 
 const defaultFormFields: FormFields = {
   email: "",
   password: "",
-  confirmPassword: "",
 };
 
-const RegisterForm = () => {
+const LoginForm = () => {
   /**
-   * Register Form
+   * Login Form
    * @typedef {FormFields}
    * @param {object} - formFields
    */
   const router = useRouter();
   const [formFields, setFormFields] = useState<FormFields>(defaultFormFields);
-  const { email, password, confirmPassword } = formFields;
+  const { email, password } = formFields;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     /**
@@ -37,34 +34,32 @@ const RegisterForm = () => {
     const { name, value } = e.target as HTMLInputElement;
     setFormFields({ ...formFields, [name]: value });
   };
+
   const handleSubmit = async (e: FormEvent) => {
     /**
      * Handle Submit Function
      * @param {object} - e
-     * @param {string} - email
-     * @param {string} - password
+     * @param {string} - email from formFields
+     * @param {string} - password from formFields
      *
-     * Prevent the default refresh, and try to invoke the createAuthUserWithEmailAndPassword
+     * Prevent the default refresh, and try to invoke the signInAuthUserWithEmailAndPassword
      * using email and password as arguments, and if a user is returned redirect to the orders
      * page else catch the thrown error and console it.
      */
     e.preventDefault();
-    if (password === confirmPassword) {
-      try {
-        const user = await createAuthUserWithEmailAndPassword(email, password);
-        if (user) {
-          router.push("orders");
-        }
-      } catch (e) {
-        console.log(e);
+    try {
+      const user = await signInAuthUserWithEmailAndPassword(email, password);
+      if (user) {
+        router.push("orders");
       }
-    } else {
-      console.log("passwords must match!");
+    } catch (e) {
+      console.log(e);
     }
   };
+
   return (
-    <div className={styles.register}>
-      <h1>Register</h1>
+    <div className={styles.login}>
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="">Email</label>
@@ -84,19 +79,10 @@ const RegisterForm = () => {
             value={password}
           />
         </div>
-        <div>
-          <label htmlFor="">Confirm Password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            onChange={handleChange}
-            value={confirmPassword}
-          />
-        </div>
-        <button>Register</button>
+        <button>Login</button>
       </form>
     </div>
   );
 };
 
-export default RegisterForm;
+export default LoginForm;
