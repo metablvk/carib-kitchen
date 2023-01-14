@@ -1,0 +1,42 @@
+.register {
+  max-width: 350px;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 2rem;
+  margin-top: 4.8rem;
+}
+
+.register h1 {
+  margin-bottom: 2.4rem;
+}
+
+.register label {
+  margin-bottom: 0;
+}
+
+.register input {
+  width: 100%;
+  border: none;
+  border-bottom: 0.1rem solid rgb(128, 128, 128);
+  padding: 1.2rem;
+  font-size: 1.8rem;
+}
+
+.register form div {
+  margin-bottom: 1.2rem;
+}
+
+.register form button {
+  margin-top: 2rem;
+}
+
+.register form button {
+  display: block;
+  text-align: right;
+  margin-left: auto;
+  padding: 1rem 2rem;
+  background: #242424;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+}
