@@ -1,25 +1,44 @@
-import { useEffect, useState, MouseEvent } from 'react';
-import styles from './menu.module.css';
-import { menuItems } from '../../data/menu-items';
-import MenuItem from '../menu-item/menu-item.component';
+import { useEffect, useState, MouseEvent } from "react";
+import styles from "./menu.module.css";
+import { menuItems } from "../../data/menu-items";
+import MenuItem from "../menu-item/menu-item.component";
 
 const Menu = () => {
-  const [filter, setFilter] = useState('all');
+  /**
+   * Menu Component
+   * A component that renders a menu on the home page.
+   */
+  const [filter, setFilter] = useState("all");
   const [filteredMenuItems, setFilteredMenuItems] = useState(menuItems);
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+    /**
+     * Handle Click Function
+     * @param {object} - e
+     * Destructures the value from e.target and sets the filter
+     * using set filtered menu items.
+     */
     const { value } = e.target as HTMLButtonElement;
     setFilter(value);
   };
   useEffect(() => {
+    /**
+     * useEffect
+     * Filters through each item returning the appropriate item according to
+     * the filter, and triggers everytime filter changes by the use of filter
+     * in the dependency array.
+     * @example
+     * if filter equals all return all items
+     * if filter equals treats return all treats
+     */
     const newFilteredMenuItems = menuItems.filter((menuItem) => {
-      if (filter === 'all') {
+      if (filter === "all") {
         return menuItem;
       } else {
-        if (menuItem.type !== 'all' && menuItem.type === filter) {
+        if (menuItem.type !== "all" && menuItem.type === filter) {
           return menuItem;
-        } else if (menuItem.type !== 'all' && menuItem.type === filter) {
+        } else if (menuItem.type !== "all" && menuItem.type === filter) {
           return menuItem;
-        } else if (menuItem.type !== 'all' && menuItem.type === filter) {
+        } else if (menuItem.type !== "all" && menuItem.type === filter) {
           return menuItem;
         }
       }
@@ -34,8 +53,8 @@ const Menu = () => {
           <li>
             <button
               onClick={handleClick}
-              className={filter === 'all' ? `${styles.active}` : ''}
-              value='all'
+              className={filter === "all" ? `${styles.active}` : ""}
+              value="all"
             >
               All
             </button>
@@ -43,8 +62,8 @@ const Menu = () => {
           <li>
             <button
               onClick={handleClick}
-              className={filter === 'breakfast' ? `${styles.active}` : ''}
-              value='breakfast'
+              className={filter === "breakfast" ? `${styles.active}` : ""}
+              value="breakfast"
             >
               Breakfast
             </button>
@@ -52,8 +71,8 @@ const Menu = () => {
           <li>
             <button
               onClick={handleClick}
-              className={filter === 'dinner' ? `${styles.active}` : ''}
-              value='dinner'
+              className={filter === "dinner" ? `${styles.active}` : ""}
+              value="dinner"
             >
               Dinner
             </button>
@@ -61,8 +80,8 @@ const Menu = () => {
           <li>
             <button
               onClick={handleClick}
-              className={filter === 'treats' ? `${styles.active}` : ''}
-              value='treats'
+              className={filter === "treats" ? `${styles.active}` : ""}
+              value="treats"
             >
               Treats
             </button>
