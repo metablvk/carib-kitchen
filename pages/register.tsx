@@ -3,6 +3,9 @@ import Head from "next/head";
 import Layout from "../components/layout/layout.component";
 import RegisterForm from "../components/register-form/register-form.component";
 const Register = () => {
+  /*
+    Home Page
+  */
   return (
     <>
       <Head>

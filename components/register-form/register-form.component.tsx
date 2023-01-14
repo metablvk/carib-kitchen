@@ -17,15 +17,35 @@ const defaultFormFields: FormFields = {
 };
 
 const RegisterForm = () => {
+  /**
+   * Register Form
+   */
   const router = useRouter();
   const [formFields, setFormFields] = useState<FormFields>(defaultFormFields);
   const { email, password, confirmPassword } = formFields;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    /**
+     * Handle Change Function
+     * @param {object} - e
+     * destructures the name and value off the e.target object,
+     * and then invokes the setFormFields function passing in
+     * previous formFields, and the new updated formField data.
+     */
     const { name, value } = e.target as HTMLInputElement;
     setFormFields({ ...formFields, [name]: value });
   };
   const handleSubmit = async (e: FormEvent) => {
+    /**
+     * Handle Submit Function
+     * @param {object} - e
+     * @param {string} - email
+     * @param {string} - password
+     *
+     * Prevent the default refresh, and try to invoke the createAuthUserWithEmailAndPassword
+     * using email and password as arguments, and if a user is returned redirect to the orders
+     * page else catch the thrown error and console it.
+     */
     e.preventDefault();
     if (password === confirmPassword) {
       try {
